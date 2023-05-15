@@ -1,0 +1,59 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Konstantin Safutin
+      changes:
+        - createTable:
+            tableName: customers
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: customers_pkey
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: user_name
+                  type: VARCHAR(255)
+              - column:
+                  name: contact
+                  type: VARCHAR(255)
+              - column:
+                  name: creation_date
+                  type: DATE
+  - changeSet:
+      id: 2
+      author: Konstantin Safutin
+      changes:
+        - createTable:
+            tableName: projects
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: projects_pkey
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: customer_id
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_projects_customers
+                    references: customers(id)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: project_name
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: VARCHAR
+              - column:
+                  name: creation_date
+                  type: DATE
