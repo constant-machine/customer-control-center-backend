@@ -1,4 +1,4 @@
-package com.constantmachine.customercontrolcenter.dao;
+package com.constantmachine.customercontrolcenter.dao.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,18 +13,22 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Table(name = "projects")
 public class Project {
+
+    private final static long serialVersionUID = 1L;
+
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "customer_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
+    @Column(nullable = false)
     private String projectName;
 
     private String description;
 
-    private LocalDate creationDate;
+    private LocalDate creationDate = LocalDate.now();
 }

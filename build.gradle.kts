@@ -14,14 +14,18 @@ repositories {
 }
 
 dependencies {
-	compileOnly("org.projectlombok:lombok:1.18.24")
-	annotationProcessor("org.projectlombok:lombok:1.18.24")
+	compileOnly("org.projectlombok:lombok:1.18.26")
+	annotationProcessor("org.projectlombok:lombok:1.18.26")
 
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.liquibase:liquibase-core")
 	runtimeOnly("com.h2database:h2")
 	runtimeOnly("org.postgresql:postgresql")
+
+	implementation("org.slf4j:slf4j-api:2.0.5")
+	testImplementation("ch.qos.logback:logback-classic:1.4.6")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
