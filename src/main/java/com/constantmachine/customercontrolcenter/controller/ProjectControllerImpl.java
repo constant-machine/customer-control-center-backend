@@ -41,8 +41,8 @@ public class ProjectControllerImpl implements ProjectController {
     }
 
     @Override
-    @DeleteMapping("/project")
-    public void deleteProject(@RequestBody Project project) {
-        projectService.deleteProject(project);
+    @DeleteMapping("/project/{id}")
+    public void deleteProject(@PathVariable Long id) {
+        projectService.deleteProject(id);
     }
 }

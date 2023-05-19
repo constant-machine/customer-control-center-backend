@@ -44,6 +44,6 @@ public class MockedProjectService implements ProjectService {
     }
 
     @Override
-    public void deleteProject(Project project) {
+    public void deleteProject(Long id) {
     }
 }

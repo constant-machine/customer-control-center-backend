@@ -10,5 +10,5 @@ public interface CustomerService {
     Customer createCustomer(Customer customer);
     Customer updateCustomer(Customer customer);
     List<Customer> listCustomers();
-    void deleteCustomer(Customer customer);
+    void deleteCustomer(Long id);
 }

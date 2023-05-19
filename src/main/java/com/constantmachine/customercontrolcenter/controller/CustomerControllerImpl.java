@@ -40,8 +40,8 @@ public class CustomerControllerImpl implements CustomerController {
     }
 
     @Override
-    @DeleteMapping("/customer")
-    public void deleteCustomer(@RequestBody Customer customer) {
-        customerService.deleteCustomer(customer);
+    @DeleteMapping("/customer/{id}")
+    public void deleteCustomer(@PathVariable Long id) {
+        customerService.deleteCustomer(id);
     }
 }

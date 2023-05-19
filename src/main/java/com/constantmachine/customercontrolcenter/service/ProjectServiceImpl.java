@@ -46,8 +46,8 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public void deleteProject(Project project) {
-        projectRepository.delete(project);
+    public void deleteProject(Long id) {
+        projectRepository.deleteById(id);
     }
 
     private Project mapDtoToProject(ProjectDto project, Customer customer) {

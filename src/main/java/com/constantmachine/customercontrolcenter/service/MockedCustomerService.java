@@ -43,6 +43,6 @@ public class MockedCustomerService implements CustomerService {
     }
 
     @Override
-    public void deleteCustomer(Customer customer) {
+    public void deleteCustomer(Long id) {
     }
 }
