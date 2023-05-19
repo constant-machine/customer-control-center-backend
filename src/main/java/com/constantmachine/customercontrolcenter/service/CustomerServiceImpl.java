@@ -3,6 +3,7 @@ package com.constantmachine.customercontrolcenter.service;
 import com.constantmachine.customercontrolcenter.dao.entity.Customer;
 import com.constantmachine.customercontrolcenter.dao.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,6 +11,7 @@ import java.util.List;
 
 
 @Service
+@Profile("!dbless")
 @RequiredArgsConstructor
 public class CustomerServiceImpl implements CustomerService {
 

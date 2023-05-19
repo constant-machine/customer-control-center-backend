@@ -2,12 +2,15 @@ package com.constantmachine.customercontrolcenter.controller;
 
 import com.constantmachine.customercontrolcenter.dao.entity.Project;
 import com.constantmachine.customercontrolcenter.service.ProjectService;
+import com.constantmachine.customercontrolcenter.service.dto.ProjectDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
+@RequestMapping("/api/v1")
 @RequiredArgsConstructor
 public class ProjectControllerImpl implements ProjectController {
 
@@ -21,7 +24,7 @@ public class ProjectControllerImpl implements ProjectController {
 
     @Override
     @PostMapping("/project")
-    public Project createProject(@RequestBody Project project) {
+    public Project createProject(@RequestBody ProjectDto project) {
         return projectService.createProject(project);
     }
 

@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
+@RequestMapping("/api/v1")
 @RequiredArgsConstructor
 public class CustomerControllerImpl implements CustomerController {
 
